@@ -3,70 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Music Player</title>
-   <link rel="stylesheet" href="style.css">
+    <title>Basic Calculator</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="music-player">
-        <div class="album-art" id="albumArt">🎵</div>
-        
-        <div class="song-info">
-            <div class="song-title" id="songTitle">Select a Song</div>
-            <div class="song-artist" id="songArtist">Unknown Artist</div>
-            <div class="song-duration" id="songDuration">0:00 / 0:00</div>
+    <div class="calculator">
+        <div class="display" id="display">0</div>
+        <div class="buttons">
+            <button class="clear" onclick="clearDisplay()">C</button>
+            <button class="clear" onclick="clearEntry()">CE</button>
+            <button class="operator" onclick="inputOperator('/')" data-key="/">÷</button>
+            <button class="operator" onclick="inputOperator('*')" data-key="*">×</button>
+            
+            <button onclick="inputNumber('7')" data-key="7">7</button>
+            <button onclick="inputNumber('8')" data-key="8">8</button>
+            <button onclick="inputNumber('9')" data-key="9">9</button>
+            <button class="operator" onclick="inputOperator('-')" data-key="-">−</button>
+            
+            <button onclick="inputNumber('4')" data-key="4">4</button>
+            <button onclick="inputNumber('5')" data-key="5">5</button>
+            <button onclick="inputNumber('6')" data-key="6">6</button>
+            <button class="operator" onclick="inputOperator('+')" data-key="+">+</button>
+            
+            <button onclick="inputNumber('1')" data-key="1">1</button>
+            <button onclick="inputNumber('2')" data-key="2">2</button>
+            <button onclick="inputNumber('3')" data-key="3">3</button>
+            <button class="equals" onclick="calculate()" data-key="Enter" rowspan="2">=</button>
+            
+            <button class="zero" onclick="inputNumber('0')" data-key="0">0</button>
+            <button onclick="inputDecimal()" data-key=".">.</button>
         </div>
-
-        <div class="progress-container">
-            <div class="progress-bar" id="progressBar">
-                <div class="progress" id="progress"></div>
-            </div>
-            <div class="time-info">
-                <span id="currentTime">0:00</span>
-                <span id="totalTime">0:00</span>
-            </div>
-        </div>
-
-        <div class="controls">
-            <button class="control-btn" id="prevBtn">⏮</button>
-            <button class="control-btn play-btn" id="playBtn">▶</button>
-            <button class="control-btn" id="nextBtn">⏭</button>
-        </div>
-
-        <div class="volume-container">
-            <span class="volume-icon">🔊</span>
-            <input type="range" class="volume-slider" id="volumeSlider" min="0" max="100" value="50">
-        </div>
-
-        <div class="autoplay-toggle">
-            <span>Autoplay</span>
-            <div class="toggle-switch" id="autoplayToggle">
-                <div class="toggle-slider"></div>
-            </div>
-        </div>
-
-        <div class="playlist">
-            <div class="playlist-header">Playlist</div>
-            <div class="playlist-item active" data-index="0">
-                <div class="playlist-item-title">Summer Vibes</div>
-                <div class="playlist-item-artist">Chill Artist</div>
-            </div>
-            <div class="playlist-item" data-index="1">
-                <div class="playlist-item-title">Midnight Dreams</div>
-                <div class="playlist-item-artist">Dream Maker</div>
-            </div>
-            <div class="playlist-item" data-index="2">
-                <div class="playlist-item-title">Electric Pulse</div>
-                <div class="playlist-item-artist">Synth Master</div>
-            </div>
-            <div class="playlist-item" data-index="3">
-                <div class="playlist-item-title">Ocean Waves</div>
-                <div class="playlist-item-artist">Nature Sounds</div>
-            </div>
+        <div class="keyboard-hint">
+            💡 Keyboard shortcuts supported!
         </div>
     </div>
 
-    <audio id="audioPlayer" preload="metadata"></audio>
-
-    <script src="script.js"> </script>
+    <script src="script.js">  </script>
 </body>
 </html>
